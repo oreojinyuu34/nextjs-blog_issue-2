@@ -5,10 +5,21 @@ import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import Layout from "@/components/Layout";
 import utilStyle from "../styles/utils.module.css";
+import { getPostsData } from "../lib/post";
 
-const inter = Inter({ subsets: ["latin"] });
+//SSGの場合
+export async function getStaticProps() {
+  const allPostsData = getPostsData();
+  console.log(allPostsData);
 
-export default function Home() {
+  return {
+    props: {
+      allPostsData,
+    },
+  };
+}
+
+export default function Home({ allPostsData }) {
   return (
     <Layout>
       <section className={utilStyle.headingMd}>
