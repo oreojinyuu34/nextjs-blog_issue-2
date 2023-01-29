@@ -37,7 +37,6 @@ export default function Home({ allPostsData }) {
         <p>プログラムの学習しています</p>
         <p>git学習</p>
       </section>
-
       <section className={`${utilStyle.headingMd} ${utilStyle.padding1px}`}>
         {/* <h2>📝ブログ</h2> */}
         <div className={styles.grid}>
